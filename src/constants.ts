@@ -1,7 +1,3 @@
-import { GiCarrot, GiPotato, GiTomato } from "react-icons/gi";
-import { BiHive } from "react-icons/bi";
-import { IconType } from "react-icons";
-
 export interface IFarmItem {
   price: number;
   icon: number;

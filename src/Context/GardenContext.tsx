@@ -150,9 +150,6 @@ export const GardenProvider = ({
     setCoins((prev) => prev + level * 10);
   }, [level]);
 
-  // useEffect(() => {
-  //   console.log(fields);
-  // }, [fields]);
   return (
     <GardenContext.Provider
       value={{
