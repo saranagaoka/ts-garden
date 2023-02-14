@@ -1,0 +1,70 @@
+@import "../global.scss";
+@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
+
+.options {
+  height: calc(100% / 6);
+  width: 100%;
+  background-color: $dark-soil;
+  color: whitesmoke;
+  font-size: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.info {
+  display: flex;
+  gap: 64px;
+  justify-content: flex-end;
+  align-items: center;
+  width: 15%;
+}
+
+.options > button {
+  border: 2px solid gray;
+  background-color: $soil-brown;
+  height: fit-content;
+  color: whitesmoke;
+  font-size: 30px;
+  font-family: "Caveat", cursive;
+  padding: 8px 25px;
+}
+
+.options > button:hover {
+  background-color: $brown;
+  transform: scale(0.9);
+}
+
+.options .disabledButton {
+  background-color: gray;
+}
+.options .disabledButton:hover {
+  transform: none;
+  background-color: gray;
+}
+
+.progress__circle {
+  background-image: conic-gradient($dark-grass 80%, $darker-grass 80%);
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: $light-green;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+}
+
+.circle > p {
+  margin: 0;
+  padding: 0;
+  font-size: 25px;
+}

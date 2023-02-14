@@ -1,0 +1,10 @@
+@import "../global.scss";
+
+.gardenGrid {
+  background-color: $brown;
+  height: 80%;
+  width: 40%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+}
