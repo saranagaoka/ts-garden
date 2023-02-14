@@ -30,9 +30,6 @@ function Field({ field }: { field: IField }) {
     field.plant && plantsArr[field.plant.icon],
     field.plant && plantsArr[field.plant.icon],
   ];
-  useEffect(() => {
-    console.log(ready);
-  }, []);
 
   const handleClick = () => {
     harvest(field);
