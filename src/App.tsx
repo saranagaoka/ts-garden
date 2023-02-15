@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
 import Bee from "./components/Bee";
 import GardenGrid from "./components/GardenGrid";
 import Options from "./components/Options";

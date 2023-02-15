@@ -14,7 +14,6 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 function Field({ field }: { field: IField }) {
-  const soilPic = require("./images/soilGarden.png");
   const plantsArr = [
     <GiCarrot />,
     <GiPotato />,
@@ -42,12 +41,10 @@ function Field({ field }: { field: IField }) {
   useEffect(() => {
     let interval: NodeJS.Timer;
     if (field.createdAt) {
-      console.log(field.plant);
       interval = setInterval(() => {
         const timeLeft =
           field.plant?.timeToGrow! + field.createdAt! - Date.now();
         setTime(timeLeft);
-        console.log(timeLeft);
       }, 1000);
     }
     return () => {
@@ -58,20 +55,17 @@ function Field({ field }: { field: IField }) {
 
   return (
     <div className={`field ${field.bought ? "" : "grayOut"}`}>
-      <img src={soilPic} alt="soil" />
-      <div className="field__planted">
-        <div className="timer">
-          {time && time > 0 && `${Math.floor(time / 1000)}s`}
-        </div>
-        {ready && (
-          <button className="harvest__button" onClick={handleClick}>
-            <p>{`HARVEST! $${field.plant?.sellPrice}`}</p>
-          </button>
-        )}
-        <div className="plants">
-          {field.plant &&
-            [...Array(3).keys()].map((_) => plantsArr[field.plant!.icon])}
-        </div>
+      <div className="timer">
+        {time && time > 0 && `${Math.floor(time / 1000)}s`}
+      </div>
+      {ready && (
+        <button className="harvest__button" onClick={handleClick}>
+          <p>{`HARVEST! $${field.plant?.sellPrice}`}</p>
+        </button>
+      )}
+      <div className="plants">
+        {field.plant &&
+          [...Array(3).keys()].map((_) => plantsArr[field.plant!.icon])}
       </div>
     </div>
   );

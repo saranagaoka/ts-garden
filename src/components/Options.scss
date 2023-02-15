@@ -2,34 +2,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
 
 .options {
-  height: calc(100% / 6);
-  width: 100%;
   background-color: $dark-soil;
   color: whitesmoke;
   font-size: 40px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  gap: 10px;
+  padding: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
 }
+
 .info {
   display: flex;
-  gap: 64px;
-  justify-content: flex-end;
   align-items: center;
-  width: 15%;
+  flex: 1 0 100px;
+  justify-content: center;
 }
 
 .options > button {
   border: 2px solid gray;
   background-color: $soil-brown;
   height: fit-content;
-  flex-wrap: nowrap;
-  width: 200px;
-
+  width: 10%;
+  white-space: nowrap;
   color: whitesmoke;
-  font-size: 30px;
+  font-size: 60%;
   font-family: "Caveat", cursive;
-  padding: 8px 25px;
+  padding: 6px;
+  text-align: center;
+  flex: 1 0 fit-content;
 }
 
 .options > button:hover {
@@ -47,28 +50,33 @@
 
 .progress__circle {
   background-image: conic-gradient($dark-grass 80%, $darker-grass 80%);
-  height: 130px;
-  width: 130px;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 110px;
+  width: 110px;
+  border-radius: 50%;
+  flex: 0 0 110px;
 }
 
 .circle {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  background-color: $light-green;
+  height: 90px;
+  width: 90px;
   border-radius: 50%;
-  height: 80px;
-  width: 80px;
-  padding: 12px;
-}
+  background: $light-green;
 
-.circle > p {
-  margin: 0;
-  padding: 0px;
-  font-size: 20px;
+  span {
+    margin: 0;
+    line-height: 28px;
+    text-align: center;
+  }
+
+  .points {
+    font-size: 20px;
+    line-height: 20px;
+  }
 }

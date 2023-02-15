@@ -12,3 +12,9 @@ $soil-brown: #4c2c14;
 $dry-soil: #733c0c;
 $dark-soil: #2c1c10;
 $opacity-green: #91b89d99;
+
+@mixin mobile {
+  @media screen and (max-width: 860px) {
+    @content;
+  }
+}

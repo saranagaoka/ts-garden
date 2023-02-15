@@ -1,4 +1,4 @@
-import { createContext, Dispatch, SetStateAction } from "react";
+import { createContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import {
@@ -6,6 +6,7 @@ import {
   newFieldPrice,
   baseCash,
   newFieldPoints,
+  levels,
 } from "../constants";
 
 const initialFields = [
@@ -44,30 +45,18 @@ export interface IField {
 
 export const GardenContext = createContext<{
   coins: number;
-  setCoins: Dispatch<SetStateAction<number>>;
-  gardenField: number;
-  setGardenField: Dispatch<SetStateAction<number>>;
   level: number;
-  setLevel: Dispatch<SetStateAction<number>>;
   points: number;
-  setPoints: Dispatch<SetStateAction<number>>;
   fields: IField[];
-  setFields: Dispatch<SetStateAction<IField[]>>;
   plant: (farmItem: IFarmItem, id?: string) => void;
   buyField: () => void;
   harvest: (fieldToHarvest: IField) => void;
   beeClick: () => void;
 }>({
   coins: baseCash,
-  setCoins: () => {},
-  gardenField: 1,
-  setGardenField: () => {},
   level: 1,
-  setLevel: () => {},
   points: 0,
-  setPoints: () => {},
   fields: {} as IField[],
-  setFields: () => {},
   plant: () => {},
   buyField: () => {},
   harvest: () => {},
@@ -80,7 +69,6 @@ export const GardenProvider = ({
   children: JSX.Element | JSX.Element[];
 }) => {
   const [coins, setCoins] = useState<number>(baseCash);
-  const [gardenField, setGardenField] = useState<number>(1);
   const [level, setLevel] = useState<number>(1);
   const [points, setPoints] = useState<number>(0);
   const [fields, setFields] = useState<IField[]>(initialFields);
@@ -131,44 +119,26 @@ export const GardenProvider = ({
   };
 
   useEffect(() => {
-    points >= 1000
-      ? setLevel(10)
-      : points >= 500
-      ? setLevel(9)
-      : points >= 350
-      ? setLevel(8)
-      : points >= 250
-      ? setLevel(7)
-      : points >= 150
-      ? setLevel(6)
-      : points >= 100
-      ? setLevel(5)
-      : points >= 60
-      ? setLevel(4)
-      : points >= 40
-      ? setLevel(3)
-      : points >= 20
-      ? setLevel(2)
-      : setLevel(1);
+    const nextLevel = levels.find((el) => el.points > points)?.level;
+    setLevel(nextLevel ? nextLevel - 1 : 10);
   }, [points]);
 
   useEffect(() => {
-    setCoins((prev) => prev + level * 10);
+    console.log("coins addded in level", level);
+    level > 1 && setCoins((prev) => prev + level * 10);
   }, [level]);
+
+  useEffect(() => {
+    console.log(coins);
+  }, [coins]);
 
   return (
     <GardenContext.Provider
       value={{
         coins,
-        setCoins,
-        gardenField,
-        setGardenField,
         level,
-        setLevel,
         points,
-        setPoints,
         fields,
-        setFields,
         plant,
         buyField,
         harvest,

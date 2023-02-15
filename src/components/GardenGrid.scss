@@ -4,8 +4,15 @@
   background-color: $brown;
   height: 80%;
   width: 40%;
-  display: flex;
-  flex-wrap: wrap;
+  // display: flex;
+  // flex-wrap: wrap;
   gap: 1px;
   user-select: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+
+  @include mobile {
+    width: calc(100% - 64px);
+  }
 }

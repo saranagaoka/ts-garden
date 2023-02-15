@@ -93,21 +93,18 @@ function Options() {
       >
         field $100
       </button>
-      <div className="info">
-        <p>${coins}</p>
-
-        <div
-          className="progress__circle"
-          style={{
-            backgroundImage: `conic-gradient(#6ca032 ${currentPointsToPercent}%, #8dbe55 ${currentPointsToPercent}%)`,
-          }}
-        >
-          <div className="circle">
-            <p>lvl {level === 10 ? "" : level}</p>
-            <p>
-              {level === 10 ? "max lvl" : `${points} / ${pointsToNextLevel!}`}
-            </p>
-          </div>
+      <div className="info">${coins}</div>
+      <div
+        className="progress__circle"
+        style={{
+          backgroundImage: `conic-gradient(#6ca032 ${currentPointsToPercent}%, #8dbe55 ${currentPointsToPercent}%)`,
+        }}
+      >
+        <div className="circle">
+          <span>{level === 10 ? "max lvl" : `lvl ${level}`}</span>
+          <span className="points">
+            {level === 10 ? "" : `${points} / ${pointsToNextLevel!}`}
+          </span>
         </div>
       </div>
     </div>

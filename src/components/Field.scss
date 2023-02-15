@@ -2,9 +2,12 @@
 
 .field {
   background-color: $brown;
-  height: calc(100% / 4 - 2px);
-  width: calc(100% / 3 - 2px);
   position: relative;
+  height: 18vh;
+  background-image: url("../components/images/soilGarden.png");
+  background-position: center;
+  background-size: cover;
+  box-sizing: border-box;
 }
 
 .field > img {
@@ -19,7 +22,7 @@
 .harvest__button {
   height: 100%;
   width: 100%;
-  font-size: 40px;
+  font-size: 100%;
   font-weight: 600;
   background-color: $opacity-green;
   color: black;
@@ -37,17 +40,36 @@
 
 .plants {
   display: flex;
-  gap: 15px;
-  transform: skewY(15deg);
-  position: absolute;
-  top: 20px;
-  left: 50px;
-  width: 100%;
-  height: 100%;
-  color: white;
-  font-size: 40px;
-  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
   align-items: center;
+  // gap: 15px;
+  color: white;
+  // font-size: 1.5em;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+
+  :first-child {
+    align-self: flex-end;
+  }
+
+  :last-child {
+    align-self: flex-start;
+  }
+
+  svg {
+    font-size: 1.5rem;
+  }
+  // transform: skewY(15deg);
+  // position: absolute;
+  // top: 20px;
+  // left: 50px;
+  // width: 100%;
+  // height: 100%;
+  // font-size: 40px;
+  // display: flex;
+  // align-items: center;
 }
 
 .timer {
