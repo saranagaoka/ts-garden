@@ -36,7 +36,7 @@ function Bee() {
   }, []);
   return (
     <button className="bee" id="beeBee" onClick={handleClick}>
-      <img src={beePic} alt="bee" /> {isOpen && <p>+1$!</p>}
+      <img src={beePic} alt="bee" /> {isOpen && <p>+5$!</p>}
     </button>
   );
 }

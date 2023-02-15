@@ -127,7 +127,7 @@ export const GardenProvider = ({
   };
 
   const beeClick = () => {
-    setCoins((prev) => prev + 1);
+    setCoins((prev) => prev + 5);
   };
 
   useEffect(() => {
