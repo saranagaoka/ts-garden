@@ -18,7 +18,7 @@ function Bee() {
 
   useEffect(() => {
     if (isOpen) {
-      const beeInterval = setTimeout(() => {
+      setTimeout(() => {
         setIsOpen(false);
       }, 2000);
     }
