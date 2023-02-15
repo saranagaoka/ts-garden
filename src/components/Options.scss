@@ -47,8 +47,8 @@
 
 .progress__circle {
   background-image: conic-gradient($dark-grass 80%, $darker-grass 80%);
-  height: 120px;
-  width: 120px;
+  height: 130px;
+  width: 130px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -62,13 +62,13 @@
   flex-direction: column;
   background-color: $light-green;
   border-radius: 50%;
-  height: 90px;
-  width: 90px;
-  padding: 4px;
+  height: 80px;
+  width: 80px;
+  padding: 12px;
 }
 
 .circle > p {
   margin: 0;
-  padding: 0;
+  padding: 0px;
   font-size: 25px;
 }

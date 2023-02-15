@@ -56,6 +56,7 @@ export const GardenContext = createContext<{
   plant: (farmItem: IFarmItem, id?: string) => void;
   buyField: () => void;
   harvest: (fieldToHarvest: IField) => void;
+  beeClick: () => void;
 }>({
   coins: baseCash,
   setCoins: () => {},
@@ -70,6 +71,7 @@ export const GardenContext = createContext<{
   plant: () => {},
   buyField: () => {},
   harvest: () => {},
+  beeClick: () => {},
 });
 
 export const GardenProvider = ({
@@ -124,6 +126,10 @@ export const GardenProvider = ({
     });
   };
 
+  const beeClick = () => {
+    setCoins((prev) => prev + 1);
+  };
+
   useEffect(() => {
     points >= 1000
       ? setLevel(10)
@@ -166,6 +172,7 @@ export const GardenProvider = ({
         plant,
         buyField,
         harvest,
+        beeClick,
       }}
     >
       {children}

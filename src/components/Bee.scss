@@ -1,0 +1,25 @@
+@import "../global.scss";
+.bee {
+  background-color: transparent;
+  border: none;
+
+  z-index: 20;
+  position: absolute;
+  transition: 2s;
+  top: 10px;
+  left: 50px;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+}
+.bee > p {
+  margin: 0;
+  padding: 0;
+  font-size: 80px;
+}
+
+.bee > img {
+  height: 50px;
+}
