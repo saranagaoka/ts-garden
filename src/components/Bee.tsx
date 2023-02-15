@@ -25,18 +25,22 @@ function Bee() {
   }, [isOpen]);
 
   useEffect(() => {
+    let prevX = 0;
     const bee = document.getElementById("beeBee");
+    const beeImg = document.getElementById("beeImg");
     const interval = setInterval(() => {
       const randomY = randomNumber(0, window.innerHeight - 150);
       const randomX = randomNumber(0, window.innerWidth - 150);
       bee!.style.top = `${randomY}px`;
       bee!.style.left = `${randomX}px`;
+      beeImg!.style.transform = `scaleX(${randomX < prevX ? "-1" : "1"})`;
+      prevX = randomX;
     }, 500);
     return () => clearInterval(interval);
   }, []);
   return (
     <button className="bee" id="beeBee" onClick={handleClick}>
-      <img src={beePic} alt="bee" /> {isOpen && <p>+5$!</p>}
+      <img src={beePic} alt="bee" id="beeImg" /> {isOpen && <p>+5$!</p>}
     </button>
   );
 }

@@ -124,13 +124,8 @@ export const GardenProvider = ({
   }, [points]);
 
   useEffect(() => {
-    console.log("coins addded in level", level);
     level > 1 && setCoins((prev) => prev + level * 10);
   }, [level]);
-
-  useEffect(() => {
-    console.log(coins);
-  }, [coins]);
 
   return (
     <GardenContext.Provider
