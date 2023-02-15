@@ -23,6 +23,9 @@
   border: 2px solid gray;
   background-color: $soil-brown;
   height: fit-content;
+  flex-wrap: nowrap;
+  width: 200px;
+
   color: whitesmoke;
   font-size: 30px;
   font-family: "Caveat", cursive;
@@ -44,8 +47,8 @@
 
 .progress__circle {
   background-image: conic-gradient($dark-grass 80%, $darker-grass 80%);
-  height: 100px;
-  width: 100px;
+  height: 120px;
+  width: 120px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -59,8 +62,9 @@
   flex-direction: column;
   background-color: $light-green;
   border-radius: 50%;
-  height: 80px;
-  width: 80px;
+  height: 90px;
+  width: 90px;
+  padding: 4px;
 }
 
 .circle > p {

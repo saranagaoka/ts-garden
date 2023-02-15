@@ -20,11 +20,12 @@
   height: 100%;
   width: 100%;
   font-size: 30px;
-  color: $leaf-green;
+  background-color: $opacity-green;
+  color: black;
   position: absolute;
   top: 0;
   left: 0;
-  background-color: transparent;
+  z-index: 10;
 }
 
 .harvest__button:hover {
@@ -45,4 +46,12 @@
   font-size: 40px;
   display: flex;
   align-items: center;
+}
+
+.timer {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  color: whitesmoke;
+  font-size: 24px;
 }

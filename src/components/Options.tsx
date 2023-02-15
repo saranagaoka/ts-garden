@@ -38,61 +38,63 @@ function Options() {
       </button>
       <button
         className={`potatoes  ${
-          coins < 20 || !emptyFieldsArr[0] ? "disabledButton" : ""
+          coins < 20 || !emptyFieldsArr[0] || level < 2 ? "disabledButton" : ""
         }`}
         onClick={() => plant(potato)}
-        disabled={coins < 20 || !emptyFieldsArr[0]}
+        disabled={coins < 20 || !emptyFieldsArr[0] || level < 2}
       >
-        potatoes $20
+        {level < 2 ? "reach lvl 2" : "potatoes $20"}
       </button>
       <button
         className={`tomatoes  ${
-          coins < 50 || !emptyFieldsArr[0] ? "disabledButton" : ""
+          coins < 50 || !emptyFieldsArr[0] || level < 4 ? "disabledButton" : ""
         }`}
         onClick={() => plant(tomato)}
-        disabled={coins < 50 || !emptyFieldsArr[0]}
+        disabled={coins < 50 || !emptyFieldsArr[0] || level < 4}
       >
-        tomatoes $50
+        {level < 4 ? "reach lvl 4" : "tomatoes $50"}
       </button>
 
       <button
         className={`strawberry  ${
-          coins < 90 || !emptyFieldsArr[0] ? "disabledButton" : ""
+          coins < 90 || !emptyFieldsArr[0] || level < 6 ? "disabledButton" : ""
         }`}
         onClick={() => plant(strawberry)}
-        disabled={coins < 90 || !emptyFieldsArr[0]}
+        disabled={coins < 90 || !emptyFieldsArr[0] || level < 6}
       >
-        strawberry $90
+        {level < 6 ? "reach lvl 6" : "strawberry $90"}
       </button>
 
       <button
         className={`beetroot  ${
-          coins < 140 || !emptyFieldsArr[0] ? "disabledButton" : ""
+          coins < 140 || !emptyFieldsArr[0] || level < 7 ? "disabledButton" : ""
         }`}
         onClick={() => plant(beetroot)}
-        disabled={coins < 90 || !emptyFieldsArr[0]}
+        disabled={coins < 140 || !emptyFieldsArr[0] || level < 7}
       >
-        beetroot $140
+        {level < 7 ? "reach lvl 7" : "beetroot $140"}
       </button>
 
       <button
         className={`bees  ${
-          coins < 150 || !emptyFieldsArr[0] ? "disabledButton" : ""
+          coins < 150 || !emptyFieldsArr[0] || level < 8 ? "disabledButton" : ""
         }`}
         onClick={() => plant(hive)}
-        disabled={coins < 150 || !emptyFieldsArr[0]}
+        disabled={coins < 150 || !emptyFieldsArr[0] || level < 8}
       >
-        hive $150
+        {level < 8 ? "reach lvl 8" : "hive $150"}
       </button>
       <button
-        className={`newField  ${coins < 100 ? "disabledButton" : ""}`}
+        className={`newField  ${
+          coins < 100 || boughtFieldsArr.length === 24 ? "disabledButton" : ""
+        }`}
         onClick={buyField}
         disabled={coins < 100 || boughtFieldsArr.length === 24}
       >
-        buy new field $100
+        field $100
       </button>
       <div className="info">
-        <p>{coins}$</p>
+        <p>${coins}</p>
 
         <div
           className="progress__circle"
@@ -101,9 +103,9 @@ function Options() {
           }}
         >
           <div className="circle">
-            <p>lvl {level}</p>
+            <p>lvl {level === 10 ? "" : level}</p>
             <p>
-              {points} /{pointsToNextLevel}
+              {level === 10 ? "max lvl" : `${points} / ${pointsToNextLevel!}`}
             </p>
           </div>
         </div>

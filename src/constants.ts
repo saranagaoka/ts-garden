@@ -70,4 +70,4 @@ export const hive: IFarmItem = {
 
 export const newFieldPrice: number = 100;
 export const newFieldPoints: number = 30;
-export const baseCash: number = 150;
+export const baseCash: number = 130;
