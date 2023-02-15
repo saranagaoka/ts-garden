@@ -65,7 +65,7 @@ function Field({ field }: { field: IField }) {
         </div>
         {ready && (
           <button className="harvest__button" onClick={handleClick}>
-            {`HARVEST! $${field.plant?.sellPrice}`}
+            <p>{`HARVEST! $${field.plant?.sellPrice}`}</p>
           </button>
         )}
         <div className="plants">
